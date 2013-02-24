@@ -1,16 +1,14 @@
 package com.jt.tagger;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
+import android.support.v4.app.FragmentActivity;
 
-public class ShareActivity extends Activity {
+public class ShareActivity extends FragmentActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +30,7 @@ public class ShareActivity extends Activity {
             public void onClick(View v) {
                 
             	Intent intent = new Intent(ShareActivity.this, main.class);
+            	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clears activity stack, after hitting storno button it is not possible go back to this share activity
                 startActivity(intent);
 
             }

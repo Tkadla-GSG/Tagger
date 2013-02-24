@@ -1,14 +1,34 @@
 package com.jt.tagger;
 
-import android.app.Activity;
+import com.jt.ui.GpsDialog;
+
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class main extends Activity {
+public class main extends FragmentActivity {
+	
+	@Override
+	protected void onStart() {
+	    super.onStart();
+
+	    LocationManager locationManager =
+	            (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+	    final boolean gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+	    if (!gpsEnabled) {
+	        
+	    	new GpsDialog().show(getSupportFragmentManager(), "GPS disabled");
+	        
+	    }
+	}
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +58,7 @@ public class main extends Activity {
     	   if (requestCode == 0) {
     	      if (resultCode == RESULT_OK) {
     	         String contents = intent.getStringExtra("SCAN_RESULT");
-    	         String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+    	         //String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
     	         
     	         Intent newIntent = new Intent(this, ShareActivity.class);
     	         newIntent.putExtra("RESULTS", contents);
