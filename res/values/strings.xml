@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Tagger</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Skener</string>
+    <string name="scanLabel">Skenovat</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="shareLabel">Share</string>
+    <string name="stornoLabel">Storno</string>
+
+</resources>
