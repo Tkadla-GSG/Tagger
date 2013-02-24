@@ -10,4 +10,6 @@
     <string name="stornoLabel">Storno</string>
     <string name="GPS_message">GPS is currently disabled. Application needs to enable GPS to retrieve your current location. Do you want to enable GPS now? </string>
 	<string name="GPS_title">Enable GPS</string>
+	<string name="connectivity_message">Application needs Internet connectivity for it\'s operations. Do you want to enable connection now? </string>
+	<string name="connectivity_title">Enable Internet connection</string>
 </resources>

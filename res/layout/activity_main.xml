@@ -3,14 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/scanBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/scanLabel" />
-
     <TextView
         android:id="@+id/txtView"
         android:layout_width="wrap_content"
@@ -20,5 +12,19 @@
         android:layout_marginTop="25dp"
         android:text="@string/hello_world"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="1.0" >
+
+        <Button
+            android:id="@+id/scanBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scanLabel" />
+
+    </LinearLayout>
 
 </RelativeLayout>

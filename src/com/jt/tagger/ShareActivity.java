@@ -1,6 +1,10 @@
 package com.jt.tagger;
 
+import com.jt.ui.GpsDialog;
+
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -29,7 +33,7 @@ public class ShareActivity extends FragmentActivity {
         stornoBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 
-            	Intent intent = new Intent(ShareActivity.this, main.class);
+            	Intent intent = new Intent(ShareActivity.this, MainActivity.class);
             	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clears activity stack, after hitting storno button it is not possible go back to this share activity
                 startActivity(intent);
 
@@ -40,6 +44,17 @@ public class ShareActivity extends FragmentActivity {
         String data = getIntent().getStringExtra("RESULTS");
         final TextView txt = (TextView) findViewById(R.id.resultTxtView);
         txt.setText(data);
+        
+        //check GPS data
+        LocationManager locationManager =
+	            (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+	    final boolean gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+	    if (!gpsEnabled) {
+	        
+	    	new GpsDialog().show(getSupportFragmentManager(), "GPS disabled");
+	        
+	    }
     }
 
     @Override
