@@ -23,10 +23,12 @@ public class MainActivity extends FragmentActivity {
 	   ConnectivityManager cm =
 	            (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 	   NetworkInfo netInfo = cm.getActiveNetworkInfo();
-	   if (netInfo == null || !netInfo.isConnectedOrConnecting()) {
-		   //no connectivity whatsoever
-		   new ConnectivityDialog().show(getSupportFragmentManager(), "Internet disabled");
-	   }	       
+	   if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+		 //some connection exist
+	   }else{
+		 //no connectivity whatsoever
+		 new ConnectivityDialog().show(getSupportFragmentManager(), "Internet disabled");
+	   }
 	}
 
 

@@ -16,16 +16,10 @@ public class ConnectivityDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.connectivity_title);
         builder.setMessage(R.string.connectivity_message)
-               .setPositiveButton("WIFI", new DialogInterface.OnClickListener() {
+               .setPositiveButton( R.string.menu_settings, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                 	   
-                	   enableWIFIsettings();	   
-                   }
-               })
-               .setNeutralButton("3G", new DialogInterface.OnClickListener() {
-                   public void onClick(DialogInterface dialog, int id) {
-                	   
-                	   enable3Gsettings();	   
+                	   enableWirelessSettings();	   
                    }
                })
                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -37,13 +31,8 @@ public class ConnectivityDialog extends DialogFragment {
         // Create the AlertDialog object and return it
         return builder.create();
     }
-    
-	private void enableWIFIsettings() {
-	    Intent settingsIntent = new Intent(Settings.ACTION_WIFI_SETTINGS);
-	    startActivity(settingsIntent);
-	}
 	
-	private void enable3Gsettings() {
+	private void enableWirelessSettings() {
 	    Intent settingsIntent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
 	    startActivity(settingsIntent);
 	}

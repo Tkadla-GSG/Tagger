@@ -20,11 +20,12 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int menu_settings=0x7f080005;
-        public static final int resultTxtView=0x7f080002;
+        public static final int latlonTxtView=0x7f080003;
+        public static final int menu_settings=0x7f080006;
+        public static final int payloadTxtView=0x7f080002;
         public static final int scanBtn=0x7f080001;
-        public static final int shareBtn=0x7f080003;
-        public static final int stornoBtn=0x7f080004;
+        public static final int shareBtn=0x7f080004;
+        public static final int stornoBtn=0x7f080005;
         public static final int txtView=0x7f080000;
     }
     public static final class layout {
@@ -43,11 +44,14 @@ public final class R {
         public static final int connectivity_title=0x7f05000b;
         public static final int hello_world=0x7f050001;
         public static final int menu_settings=0x7f050002;
+        public static final int not_support_gps=0x7f05000d;
+        public static final int not_support_network=0x7f05000e;
         public static final int scanLabel=0x7f050004;
         public static final int shareLabel=0x7f050006;
         public static final int stornoLabel=0x7f050007;
         public static final int title_activity_main=0x7f050003;
         public static final int title_activity_share=0x7f050005;
+        public static final int unknown=0x7f05000c;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;
